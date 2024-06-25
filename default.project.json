@@ -1,5 +1,5 @@
 {
-	"name": "project",
+	"name": "anti-wallhop-testing",
 	"tree": {
 		"$className": "DataModel",
 		"ReplicatedStorage": {
