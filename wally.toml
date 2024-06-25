@@ -1,0 +1,8 @@
+[package]
+name = "cozywitchcraft/anti-wallhop-testing"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+AntiWallhop = "cozywitchcraft/anti-wallhop@0.1.1"
