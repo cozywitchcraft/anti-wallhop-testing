@@ -12,8 +12,13 @@ local currentCamera = workspace.CurrentCamera
 
 local function snapAngle(theta: number, snap: number, add: boolean): number
 	local alpha = theta / snap
+	local newAlpha
 
-	local newAlpha = if add then math.ceil(alpha + NUDGE) else math.floor(alpha - NUDGE)
+	if add then
+		newAlpha = math.ceil(alpha + NUDGE)
+	else
+		newAlpha = math.floor(alpha - NUDGE)
+	end
 
 	return newAlpha * snap
 end
@@ -42,7 +47,7 @@ local function alignCameraPitch(down: boolean)
 	currentCamera.CFrame = focus:ToWorldSpace(offset * focus:ToObjectSpace(cframe))
 end
 
-local function handleAction(actionName: "AlignLeft"|"AlignRight", inputState: Enum.UserInputState)
+local function handleAction(actionName: string, inputState: Enum.UserInputState)
 	if inputState ~= Enum.UserInputState.Begin then
 		return Enum.ContextActionResult.Pass
 	end
